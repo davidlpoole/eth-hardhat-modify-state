@@ -21,3 +21,23 @@ describe("TestModifyVariable", function () {
     assert.equal(newX.toNumber(), 1337);
   });
 });
+
+describe("TestModifyMessage", function () {
+  it("should change the string to something else", async function () {
+    // create an ethers ContractFactory abstraction
+    const ModifyVariable = await ethers.getContractFactory("ModifyVariable");
+
+    // use the ContractFactory object to deploy an instance of the contract
+    const contract = await ModifyVariable.deploy(20);
+
+    // wait for contract to be deployed and validated!
+    await contract.deployed();
+
+    // modify the message
+    await contract.modifyMessage('goodbye');
+
+    // get the current value of message
+    const newMessage = await contract.message();
+    assert.equal(newMessage, 'goodbye')
+  });
+});

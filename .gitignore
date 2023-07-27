@@ -1,5 +1,3 @@
 node_modules
-artifacts/build-info/bb3379189ddb51b7670d09cf6fd2f04a.json
-artifacts/contracts/ModifyVariable.sol/ModifyVariable.dbg.json
-artifacts/contracts/ModifyVariable.sol/ModifyVariable.json
-cache/solidity-files-cache.json
+artifacts
+cache
